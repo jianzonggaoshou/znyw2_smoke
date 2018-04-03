@@ -4,13 +4,12 @@ from time import sleep
 
 
 class LogoutPage(object):
-    def __init__(self):
-        # 设置
-        self.set_up_button = '//span[contains(text(), "设置")]'
-        # 退出登陆
-        self.logout_button = '//li[contains(text(), "退出登录")]'
+    # 设置button
+    set_up_button = (By.XPATH, '//span[contains(text(), "设置")]')
+    # 退出登录button
+    logout_button = (By.XPATH, '//li[contains(text(), "退出登录")]')
 
     def test_user_logout(self, driver):
-        driver.find_element(By.XPATH, self.set_up_button).click()
+        driver.find_element(*self.set_up_button).click()
         sleep(1)
-        driver.find_element(By.XPATH, self.logout_button).click()
+        driver.find_element(*self.logout_button).click()
