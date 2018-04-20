@@ -104,6 +104,17 @@ class Test(unittest.TestCase):
         workOrder1.input_group(driver=driver, group=u'巡检一班')
         """点击派单按钮"""
         workOrder1.click_dispatch_button(driver=driver)
+        sleep(1)
+        driver.implicitly_wait(20)
+        """******************"""
+        """点击我的待办按钮"""
+        workOrder1.click_my_to_do_button(driver=driver)
+        sleep(1)
+        driver.implicitly_wait(20)
+        """点击第一个处理按钮"""
+        workOrder1.click_first_deal_button(driver=driver)
+
+
 
         sleep(10)
         # 浏览器退出
